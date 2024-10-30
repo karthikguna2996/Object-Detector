@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ARorVR</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="karthikWebML.css">
+</head>
+
+<body>
+    <div class="area">
+        <ul class="squares">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="maincont">
+        <div class="patterns">
+            <svg width="100%" height="100%">
+                <defs>
+                    <pattern id="polka-dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                        <circle fill="#be9ddf" cx="25" cy="25" r="3"></circle>
+                    </pattern>
+                    <style>
+                        @import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
+                    </style>
+
+                </defs>
+
+
+
+
+
+                <text x="50%" y="60%" text-anchor="middle" class="ar">
+                    ARorVR
+                </text>
+            </svg>
+        </div>
+        <div class="container1">
+            <div class="row">
+                <div style="text-align:center;">
+                    <h3 class="animate-charcter"> Real Time Object Detection</h3>
+                </div>
+            </div>
+        </div>
+        <div class="textl">
+            <p class="para2">Before starting, please wait for the model to fully load. Once the model is ready,.<br /> click the button to enable the webcam and start detecting objects in real-time .<br /> The webcam view will appear, allowing you to see and interact with the detected objects.</p>
+
+
+
+
+            <div id="primary-content" class="centered-pen">
+
+                <div class="personal-assistant">
+                    <div id="felix" class="felix" onclick="activateFelix();">
+                        <div class="eyes">
+                            <div class="eye left"></div>
+                            <div class="eye right"></div>
+                        </div>
+                    </div>
+                    <div class="platform"></div>
+                    <ul class="command-list">
+                        <li><i class="far fa-clouds" onclick="getWeather();"></i></li>
+                        <li><i class="far fa-clock" onclick="getTime();"></i></li>
+                        <li><i class="far fa-calendar-alt" onclick="getDate();"></i></li>
+                        <li><i class="far fa-grin-squint-tears" onclick="tellJoke();"></i></li>
+                        <li><i class="far fa-search" onclick="searchGoogle();"></i></li>
+                        <li><i class="far fa-lightbulb-on" onclick="showInspiration();"></i></li>
+                        <p class="hey-felix lead"></p>
+                    </ul>
+                </div>
+                <div id="response-frame" class="response-frame">
+                    <p id="response-message" class="lead"></p>
+                    <i class="fas fa-times" onclick="closeResponse();"></i>
+                </div>
+            </div>
+            <p>To see objects classified in real-time, hold them close to your webcam.<br /> When you're ready, click "Enable Webcam" below and allow the browser to access your <br /> webcam when prompted (look for the permission request at the top left of your window).</p>
+
+        </div>
+
+
+        <section id="demos" class="invisible">
+
+
+            <div id="liveView" class="camView">
+
+                <button class="custom-btn btn-3" style="margin-left:690px;" id="webcamButton"><span>Enable Webcam</span></button>
+                <video class="main_cont" id="webcam" autoplay muted width="640" height="480"></video>
+            </div>
+        </section>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+
+    <script src="karthikWebML.js" defer></script>
+</body>
+
+</html>
